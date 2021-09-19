@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using WPF_Labs.Windows;
 
 namespace WPF_Labs
 {
@@ -9,22 +12,39 @@ namespace WPF_Labs
     /// </summary>
     public partial class MainWindow
     {
+       private First _firstWin;
+       private Second _secondWin;
+       private Third _thirdWin;
+       private Forth _forthWin;
+       
         public MainWindow()
         {
             InitializeComponent();
+
+            _firstWin = new First();
+            _secondWin = new Second();
+            _thirdWin = new Third();
+            _forthWin = new Forth();
         }
 
         private void Btn1_OnClick(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(TextBox1.Text, out int num))
-            {
-                MessageBox.Show(  num % 2 == 0 ? "Number is Even" : "Number is Odd");
-            }
-            else
-            {
-                MessageBox.Show("'A' character count in text: " + TextBox1.Text.ToLower().Count(c => c == 'a'));
-            }
-           
+            _firstWin.Show();
+        }
+
+        private void Btn2_OnClick(object sender, RoutedEventArgs e)
+        {
+           _secondWin.Show();
+        }
+
+        private void Btn3_OnClick(object sender, RoutedEventArgs e)
+        {
+           _thirdWin.Show();
+        }
+
+        private void Btn4_OnClick(object sender, RoutedEventArgs e)
+        {
+            _forthWin.Show();
         }
     }
 }

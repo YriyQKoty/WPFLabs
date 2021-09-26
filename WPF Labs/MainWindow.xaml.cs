@@ -16,6 +16,7 @@ namespace WPF_Labs
        private Second _secondWin;
        private Third _thirdWin;
        private Forth _forthWin;
+       private Fifth _fifthWin;
        
         public MainWindow()
         {
@@ -25,6 +26,7 @@ namespace WPF_Labs
             _secondWin = new Second();
             _thirdWin = new Third();
             _forthWin = new Forth();
+            _fifthWin = new Fifth();
         }
 
         private void Btn1_OnClick(object sender, RoutedEventArgs e)
@@ -45,6 +47,11 @@ namespace WPF_Labs
         private void Btn4_OnClick(object sender, RoutedEventArgs e)
         {
             _forthWin.Show();
+        }
+
+        private void Btn5_OnClick(object sender, RoutedEventArgs e)
+        {
+            _fifthWin.Show();
         }
     }
 }

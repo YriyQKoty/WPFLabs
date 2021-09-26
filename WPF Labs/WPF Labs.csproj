@@ -58,6 +58,9 @@
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Windows\Fifth.xaml.cs">
+          <DependentUpon>Fifth.xaml</DependentUpon>
+        </Compile>
         <Compile Include="Windows\First.xaml.cs">
           <DependentUpon>First.xaml</DependentUpon>
         </Compile>
@@ -93,6 +96,7 @@
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
+      <Page Include="Windows\Fifth.xaml" />
       <Page Include="Windows\First.xaml" />
       <Page Include="Windows\Forth.xaml" />
       <Page Include="Windows\Second.xaml" />

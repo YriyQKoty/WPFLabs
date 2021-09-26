@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Labs"
         mc:Ignorable="d"
-        Title="Lab2" Height="350" Width="525">
+        Title="Lab2" Height="400" Width="525">
        <StackPanel>
            <Button x:Name="Btn1" Width="150" Height="30" Margin = "0,50,0,20" Content="First task" Click="Btn1_OnClick"/>
            <Button x:Name="Btn2" Width="150" Height="30" Margin = "0,0,0,20" Content="Second task" Click="Btn2_OnClick"/>
            <Button x:Name="Btn3" Width="150" Height="30" Margin = "0,0,0,20" Content="Third task" Click="Btn3_OnClick"/>
            <Button x:Name="Btn4" Width="150" Height="30" Margin = "0,0,0,20" Content="Forth task" Click="Btn4_OnClick"/>
+           <Button x:Name="Btn5" Width="150" Height="30" Margin = "0,0,0,20" Content="Fifth task" Click="Btn5_OnClick"/>
        </StackPanel>
 </Window>

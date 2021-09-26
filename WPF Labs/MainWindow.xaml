@@ -4,13 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Labs"
+        xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:model="clr-namespace:WPF_Labs.Model"
         mc:Ignorable="d"
-        Title="Lab2" Height="400" Width="525">
-       <StackPanel>
-           <Button x:Name="Btn1" Width="150" Height="30" Margin = "0,50,0,20" Content="First task" Click="Btn1_OnClick"/>
-           <Button x:Name="Btn2" Width="150" Height="30" Margin = "0,0,0,20" Content="Second task" Click="Btn2_OnClick"/>
-           <Button x:Name="Btn3" Width="150" Height="30" Margin = "0,0,0,20" Content="Third task" Click="Btn3_OnClick"/>
-           <Button x:Name="Btn4" Width="150" Height="30" Margin = "0,0,0,20" Content="Forth task" Click="Btn4_OnClick"/>
-           <Button x:Name="Btn5" Width="150" Height="30" Margin = "0,0,0,20" Content="Fifth task" Click="Btn5_OnClick"/>
-       </StackPanel>
+        Title="Lab3" Height="400" Width="525">
+    
+    <Canvas>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Menu">
+                    <MenuItem x:Name="addClient" Header="_Add Client" Click="AddClient_OnClick"/>
+                    <MenuItem x:Name="clearAll" Header="_Clear All" Click="ClearAll_OnClick"/>
+                    <MenuItem x:Name="clearFields" Header="_Clear Fields" Click="ClearFields_OnClick"/>
+                    <Separator />
+                    <MenuItem x:Name="exit" Header="_Exit" Click="Exit_OnClick"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+           
+           <Calendar x:Name="calendar" Canvas.Left="25" Canvas.Top="25"></Calendar>
+           <Label Canvas.Right="200" Canvas.Top="20" Content="_First Name" Target="{Binding ElementName=firstName}"/>
+           <TextBox x:Name="firstName" Canvas.Right="100" Canvas.Top="25" Width="100" ></TextBox>
+           
+           <Label Canvas.Right="200" Canvas.Top="45" Content="_Last Name" Target="{Binding ElementName=lastName}"/>
+           <TextBox x:Name="lastName" Canvas.Right="100" Canvas.Top="50" Width="100"></TextBox>
+           
+           <Label Canvas.Right="200" Canvas.Top="70" Content="_Place Num(1-300)" Target="{Binding ElementName=sitNum}"/>
+           <TextBox x:Name="sitNum" Canvas.Right="100" Canvas.Top="75" Width="100"></TextBox>
+           
+           <Label Canvas.Right="200" Canvas.Top="95" Content="_Flight Num(1-10)" Target="{Binding ElementName=flightNum}"/>
+           <TextBox x:Name="flightNum" Canvas.Right="100" Canvas.Top="100" Width="100"></TextBox>
+           
+           <Label Canvas.Right="200" Canvas.Top="120" Content="_Destination City" Target="{Binding ElementName=city}"/>
+           <ComboBox x:Name="city" Canvas.Right="100" Canvas.Top="125" Width="100"/>
+
+           <Label Canvas.Right="200" Canvas.Top="145" Content="_VIP" Target="{Binding ElementName=vip}"/>
+           <CheckBox x:Name="vip" Canvas.Right="100" Canvas.Top="150" Width="100"/>
+           
+           <DataGrid Canvas.Top="225" Name="clientsTable" AutoGenerateColumns="False" IsReadOnly="True" CanUserResizeColumns="True" CanUserAddRows="False" CanUserSortColumns="True" ItemsSource="{Binding }">
+               <DataGrid.Columns>
+                   <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" />
+                   <DataGridTextColumn Header="Second Name" Binding="{Binding LastName}" />
+                   <DataGridTextColumn Header="Place Number" Binding="{Binding SitNumber}" />
+                   <DataGridTextColumn Header="Flight Number" Binding="{Binding FlightNumber}" />
+                   <DataGridTextColumn Header="Date" Binding="{Binding TakeOffDate}"/>
+                   <DataGridTextColumn Header="Destination City" Binding="{Binding DestinationCity}" />
+                   <DataGridTextColumn Header="Is VIP" Binding="{Binding IsVip}" />
+                   <DataGridTextColumn Header="Price" Binding="{Binding Cost}" />
+               </DataGrid.Columns>
+           </DataGrid>
+       </Canvas>
+    
+    
 </Window>

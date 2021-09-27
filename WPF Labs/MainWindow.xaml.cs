@@ -9,22 +9,19 @@ namespace WPF_Labs
     /// </summary>
     public partial class MainWindow
     {
+        private Student _student = new Student() {Course = 1, FirstName = "Test", LastName = "test"};
+
+        public Student Student => _student;
+        
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Btn1_OnClick(object sender, RoutedEventArgs e)
+        private void Check_OnClick(object sender, RoutedEventArgs e)
         {
-            if (Int32.TryParse(TextBox1.Text, out int num))
-            {
-                MessageBox.Show(  num % 2 == 0 ? "Number is Even" : "Number is Odd");
-            }
-            else
-            {
-                MessageBox.Show("'A' character count in text: " + TextBox1.Text.ToLower().Count(c => c == 'a'));
-            }
-           
+            MessageBox.Show($"{Student.Course}, {Student.FirstName}, {Student.LastName}");
         }
     }
 }

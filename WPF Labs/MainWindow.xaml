@@ -7,22 +7,28 @@
         mc:Ignorable="d"
         Title="Lab1" Height="350" Width="525">
         
-    <StackPanel DataContext="{Binding ElementName=mainWin, Path=Student}">
-        <StackPanel Orientation="Horizontal">
-            <Label  Target="name" Content="First Name" Margin="0,10,0,10" />
-            <TextBox x:Name="name" Margin="0,10,0,10" Height="50" Width="300" Text="{Binding ElementName=mainWin, Path=Student.FirstName, Mode=TwoWay}"></TextBox>
-        </StackPanel>
-      
-        <StackPanel Orientation="Horizontal">
-            <Label Target="name" Content="Last Name" Margin="0,10,0,10"  />
-            <TextBox x:Name="lastName" Margin="0,10,0,10"  Height="50" Width="300" Text="{Binding ElementName=mainWin, Path=Student.LastName, Mode=TwoWay}"></TextBox>
-        </StackPanel>
-       
-        <StackPanel Orientation="Horizontal">
-            <Label  Target="name" Content="Course" Margin="0,10,0,10" />
-            <TextBox x:Name="course" Margin="0,10,0,10"   Height="50" Width="300" Text="{Binding ElementName=mainWin, Path=Student.Course,Mode=TwoWay}"></TextBox>
-        </StackPanel>
-      
-        <Button Click="Check_OnClick"  x:Name="check" Width="200" Height="50" Content="Check"/>
-    </StackPanel>
+    <Canvas 
+        Loaded="FrameworkElement_OnLoaded">
+        
+        <Ellipse 
+            MouseDown="UIElement_OnMouseDown"
+            
+            Focusable="True"
+            Width="50"
+            Height="50"
+            Stroke="Red"
+            StrokeThickness="25"/>
+        
+        <TextBox 
+            Focusable="True"
+            x:Name="TextBox1"
+            GotFocus="UIElement_OnGotFocus"
+            LostFocus="UIElement_OnLostFocus"
+            Width="400" 
+            Height="100" 
+            Text="KeyDown" 
+            Canvas.Top="100" />
+
+        
+    </Canvas>
 </Window>
